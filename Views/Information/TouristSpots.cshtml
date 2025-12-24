@@ -1,0 +1,66 @@
+@model List<TouristSpot>
+@* Tourist Spots Information Page *@
+@{
+    ViewData["Title"] = "Tourist Spots";
+}
+
+<div class="page-header">
+    <div class="container">
+        <h1>Tourist Spots</h1>
+        <p>Discover amazing destinations across our country. Explore beaches, monuments, and natural wonders.</p>
+    </div>
+</div>
+
+<div class="container">
+    <section class="info-intro">
+        <p>
+            Explore our comprehensive collection of tourist destinations. Each spot is carefully curated to help you plan your perfect getaway with detailed information and quality ratings.
+        </p>
+    </section>
+
+    @if (Model != null && Model.Any())
+    {
+        <div class="items-grid">
+            @foreach (var spot in Model)
+            {
+                <div class="item-card @(!spot.IsAvailable ? "unavailable" : "")">
+                    <div class="item-header">
+                        <h3>@spot.Name</h3>
+                        @if (!spot.IsAvailable)
+                        {
+                            <span class="badge badge-closed">Closed</span>
+                        }
+                        else
+                        {
+                            <span class="badge badge-success">Open</span>
+                        }
+                    </div>
+
+                    <div class="item-details">
+                        <p class="location">
+                            <strong>📍 Location:</strong> @spot.Location
+                        </p>
+                        <p class="description">
+                            @spot.Description
+                        </p>
+                        <div class="pricing-info">
+                            <p class="quality">
+                                <strong>⭐ Quality Rating:</strong> @spot.Quality
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    }
+    else
+    {
+        <div class="no-data">
+            <p>No tourist spots information available at the moment. Please check back later.</p>
+        </div>
+    }
+
+    <div class="back-link">
+        <a asp-controller="Information" asp-action="Index">← Back to Information Hub</a>
+    </div>
+</div>

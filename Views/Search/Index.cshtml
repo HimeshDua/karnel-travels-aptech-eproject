@@ -1,0 +1,209 @@
+@model SearchViewModel
+@*
+    Search Page - Main search functionality with filters
+*@
+@{
+    ViewData["Title"] = "Search";
+}
+
+<div class="page-header">
+    <div class="container">
+        <h1>Search Travel Information</h1>
+        <p>Find tourist spots, hotels, restaurants, and resorts tailored to your preferences</p>
+    </div>
+</div>
+
+<div class="container">
+    <!-- Search Form with Filters -->
+    <section class="search-form-section">
+        <form asp-controller="Search" asp-action="Index" method="get" class="search-form">
+            <div class="search-row">
+                <div class="form-group">
+                    <label for="searchTerm">Search Terms</label>
+                    <input type="text" id="searchTerm" name="searchTerm"
+                           value="@ViewData["SearchTerm"]"
+                           class="form-control"
+                           placeholder="Enter destination, hotel, or restaurant name..." />
+                </div>
+
+                <div class="form-group">
+                    <label for="location">Location</label>
+                    <input type="text" id="location" name="location"
+                           value="@ViewData["Location"]"
+                           class="form-control"
+                           placeholder="City or region..." />
+                </div>
+            </div>
+
+            <div class="search-row">
+                <div class="form-group">
+                    <label for="minPrice">Min Price (₹)</label>
+                    <input type="number" id="minPrice" name="minPrice"
+                           value="@ViewData["MinPrice"]"
+                           class="form-control"
+                           placeholder="0"
+                           min="0" step="100" />
+                </div>
+
+                <div class="form-group">
+                    <label for="maxPrice">Max Price (₹)</label>
+                    <input type="number" id="maxPrice" name="maxPrice"
+                           value="@ViewData["MaxPrice"]"
+                           class="form-control"
+                           placeholder="50000"
+                           min="0" step="100" />
+                </div>
+
+                <div class="form-group">
+                    <label for="quality">Quality</label>
+                    <select id="quality" name="quality" class="form-control">
+                        <option value="">All Quality Levels</option>
+                        <option value="Luxury" selected="@(ViewData["Quality"]?.ToString() == "Luxury")">Luxury</option>
+                        <option value="Premium" selected="@(ViewData["Quality"]?.ToString() == "Premium")">Premium</option>
+                        <option value="Excellent" selected="@(ViewData["Quality"]?.ToString() == "Excellent")">Excellent</option>
+                        <option value="Good" selected="@(ViewData["Quality"]?.ToString() == "Good")">Good</option>
+                        <option value="Standard" selected="@(ViewData["Quality"]?.ToString() == "Standard")">Standard</option>
+                        <option value="Budget" selected="@(ViewData["Quality"]?.ToString() == "Budget")">Budget</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="availability">Availability</label>
+                    <select id="availability" name="availability" class="form-control">
+                        <option value="">All Statuses</option>
+                        <option value="true" selected="@(ViewData["Availability"]?.ToString() == "True")">Available Only</option>
+                        <option value="false" selected="@(ViewData["Availability"]?.ToString() == "False")">Not Available</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="search-actions">
+                <button type="submit" class="btn btn-primary">Search</button>
+                <a asp-controller="Search" asp-action="Index" class="btn btn-secondary">Clear Filters</a>
+            </div>
+        </form>
+    </section>
+
+    <!-- Search Results Section -->
+    <section class="search-results">
+        @if (Model != null && Model.HasResults)
+        {
+            <h2>Search Results (@Model.TotalResults found)</h2>
+
+            <!-- Tourist Spots Results -->
+            @if (Model.TouristSpots.Any())
+            {
+                <div class="results-category">
+                    <h3>🏖️ Tourist Spots (@Model.TouristSpots.Count)</h3>
+                    <div class="results-grid">
+                        @foreach (var spot in Model.TouristSpots)
+                        {
+                            <div class="result-card">
+                                <h4>@spot.Name</h4>
+                                <p class="location">📍 @spot.Location</p>
+                                <p class="description">@spot.Description</p>
+                                <div class="meta">
+                                    <span class="quality">⭐ @spot.Quality</span>
+                                    <span class="availability">
+                                        @if (spot.IsAvailable)
+                                        {
+                                            <span class="badge badge-success">Available</span>
+                                        }
+                                        else
+                                        {
+                                            <span class="badge badge-closed">Closed</span>
+                                        }
+                                    </span>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                </div>
+            }
+
+            <!-- Hotels Results -->
+            @if (Model.Hotels.Any())
+            {
+                <div class="results-category">
+                    <h3>🏨 Hotels (@Model.Hotels.Count)</h3>
+                    <div class="results-grid">
+                        @foreach (var hotel in Model.Hotels)
+                        {
+                            <div class="result-card">
+                                <h4>@hotel.Name</h4>
+                                <p class="location">📍 @hotel.Location</p>
+                                <p class="description">@hotel.Description</p>
+                                <div class="meta">
+                                    <span class="price">💰 ₹@hotel.Price.ToString("N0")</span>
+                                    <span class="quality">⭐ @hotel.Quality</span>
+                                    <span class="availability">🛏️ @hotel.Availability available</span>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                </div>
+            }
+
+            <!-- Restaurants Results -->
+            @if (Model.Restaurants.Any())
+            {
+                <div class="results-category">
+                    <h3>🍽️ Restaurants (@Model.Restaurants.Count)</h3>
+                    <div class="results-grid">
+                        @foreach (var restaurant in Model.Restaurants)
+                        {
+                            <div class="result-card">
+                                <h4>@restaurant.Name</h4>
+                                <p class="location">📍 @restaurant.Location</p>
+                                <p class="description">@restaurant.Description</p>
+                                <div class="meta">
+                                    <span class="price">💰 ₹@restaurant.Price.ToString("N0")</span>
+                                    <span class="quality">⭐ @restaurant.Quality</span>
+                                    <span class="availability">🪑 @restaurant.Availability seats</span>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                </div>
+            }
+
+            <!-- Resorts Results -->
+            @if (Model.Resorts.Any())
+            {
+                <div class="results-category">
+                    <h3>🏝️ Resorts (@Model.Resorts.Count)</h3>
+                    <div class="results-grid">
+                        @foreach (var resort in Model.Resorts)
+                        {
+                            <div class="result-card">
+                                <h4>@resort.Name</h4>
+                                <p class="location">📍 @resort.Location</p>
+                                <p class="description">@resort.Description</p>
+                                <div class="meta">
+                                    <span class="price">💰 ₹@resort.Price.ToString("N0")</span>
+                                    <span class="quality">⭐ @resort.Quality</span>
+                                    <span class="availability">🛏️ @resort.Availability rooms</span>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                </div>
+            }
+        }
+        else if (ViewData["SearchTerm"] != null || ViewData["Location"] != null || ViewData["MinPrice"] != null ||
+                 ViewData["MaxPrice"] != null || ViewData["Quality"] != null || ViewData["Availability"] != null)
+        {
+            <div class="no-results">
+                <h3>No Results Found</h3>
+                <p>We couldn't find any results matching your search criteria. Try adjusting your filters or search terms.</p>
+            </div>
+        }
+        else
+        {
+            <div class="initial-message">
+                <h3>Start Your Search</h3>
+                <p>Use the filters above to search for tourist spots, hotels, restaurants, and resorts.</p>
+            </div>
+        }
+    </section>
+</div>

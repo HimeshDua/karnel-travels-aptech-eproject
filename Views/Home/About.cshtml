@@ -1,0 +1,66 @@
+@* About Us Page *@
+@{
+    ViewData["Title"] = "About Us";
+}
+
+<div class="page-header">
+    <div class="container">
+        <h1>About Karnel Travels</h1>
+        <p>Your Trusted Travel Information Partner</p>
+    </div>
+</div>
+
+<div class="container">
+    <section class="about-section">
+        <h2>Company Overview</h2>
+        <p>
+            Karnel Travels has been a leading provider of comprehensive travel information for over a decade.
+            We are dedicated to helping travelers discover the best destinations, accommodations, dining experiences,
+            and transportation options.
+        </p>
+        <p>
+            Our mission is to make travel planning easy, informative, and accessible to everyone through our
+            centralized platform.
+        </p>
+    </section>
+
+    <section class="services-section">
+        <h2>Our Services</h2>
+
+        <div class="items-grid">
+            <div class="service-item">
+                <h3>🚗 Transportation Services</h3>
+                <p>Comprehensive information about trains, buses, flights, and ferries with route details and schedules.</p>
+            </div>
+
+            <div class="service-item">
+                <h3>🎒 Tour Packages</h3>
+                <p>Curated tour package information including heritage tours, adventure packages, and beach holidays.</p>
+            </div>
+
+            <div class="service-item">
+                <h3>🏨 Accommodation</h3>
+                <p>Detailed listings for hotels and resorts ranging from luxury properties to budget-friendly stays.</p>
+            </div>
+
+            <div class="service-item">
+                <h3>📍 Tourist Guides</h3>
+                <p>In-depth guides to destinations, hidden gems, and popular attractions to help you plan your itinerary.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="values-section">
+        <h2>Our Commitment</h2>
+        <p>
+            We are committed to providing accurate and up-to-date travel information. We continuously update our
+            database to ensure you have access to the latest details about destinations and services.
+        </p>
+    </section>
+
+    <div class="cta-section">
+        <h2>Ready to explore?</h2>
+        <p>Start planning your next adventure today.</p>
+        <a asp-controller="Search" asp-action="Index" class="btn btn-primary">Get Started</a>
+    </div>
+</div>

@@ -1,0 +1,71 @@
+@model List<TravelInfo>
+@*
+    Travel Information Page
+    Displays: Transportation facilities within the country
+    Data source: TravelInfos table (ordered by newest entries first)
+    Shows: Transport type, routes, description, price, availability
+*@
+@{
+    ViewData["Title"] = "Travel Information";
+}
+
+<div class="page-header">
+    <div class="container">
+        <h1>Travel Information</h1>
+        <p>Transportation facilities across the country</p>
+    </div>
+</div>
+
+<div class="container">
+    <section class="info-intro">
+        <p>
+            Find comprehensive information about various modes of transportation including trains, buses,
+            flights, and ferries. Plan your journey with details about routes, schedules, and pricing.
+        </p>
+    </section>
+
+    @if (Model != null && Model.Any())
+    {
+        <div class="items-grid">
+            @foreach (var travel in Model)
+            {
+                <div class="item-card @(!travel.Availability ? "unavailable" : "")">
+                    <div class="item-header">
+                        <h3>@travel.Route</h3>
+                        <span class="transport-type">@travel.TransportType</span>
+                    </div>
+
+                    <div class="item-details">
+                        <p class="description">
+                            @travel.Description
+                        </p>
+                        <p class="price">
+                            <strong>💰 Fare:</strong> ₹@travel.Price.ToString("N0")
+                        </p>
+                        <p class="availability">
+                            <strong>Status:</strong>
+                            @if (travel.Availability)
+                            {
+                                <span class="badge badge-success">Available</span>
+                            }
+                            else
+                            {
+                                <span class="badge badge-closed">Not Available</span>
+                            }
+                        </p>
+                    </div>
+                </div>
+            }
+        </div>
+    }
+    else
+    {
+        <div class="no-data">
+            <p>No travel information available at the moment. Please check back later.</p>
+        </div>
+    }
+
+    <div class="back-link">
+        <a asp-controller="Information" asp-action="Index">← Back to Information Hub</a>
+    </div>
+</div>

@@ -1,0 +1,82 @@
+@model List<Resort>
+@* Resorts Information Page *@
+@{
+    ViewData["Title"] = "Resorts";
+}
+
+<div class="page-header">
+    <div class="container">
+        <h1>Resorts</h1>
+        <p>Luxury getaways and premium accommodations for your perfect vacation.</p>
+    </div>
+</div>
+
+<div class="container">
+    <section class="info-intro">
+        <p>
+            Discover premium resorts offering comprehensive recreational facilities, spa services, and luxury amenities. Find the perfect retreat for your next holiday.
+        </p>
+    </section>
+
+    @if (Model != null && Model.Any())
+    {
+        <div class="items-grid">
+            @foreach (var resort in Model)
+            {
+                <div class="item-card @(resort.Availability == 0 ? "unavailable" : "")">
+                    <div class="item-header">
+                        <h3>@resort.Name</h3>
+                        <span class="quality-badge">⭐ @resort.Quality</span>
+                    </div>
+
+                    <div class="item-details">
+                        <p class="location">
+                            <strong>📍 Location:</strong> @resort.Location
+                        </p>
+                        <p class="description">
+                            @resort.Description
+                        </p>
+                        <div class="pricing-info">
+                            <p class="price">
+                                <strong>💰 Price:</strong> ₹@resort.Price.ToString("N0") per night
+                            </p>
+                            <p class="availability">
+                                <strong>🛏️ Rooms:</strong> @resort.Availability / @resort.Capacity available
+                            </p>
+                        </div>
+                    </div>
+
+                    @{
+                        var occupancyRate = resort.Capacity > 0 ? (double)(resort.Capacity - resort.Availability) / resort.Capacity * 100 : 0;
+                    }
+
+                    <div class="item-footer">
+                        @if (resort.Availability > 0)
+                        {
+                            <span class="badge badge-success">Available</span>
+
+                            @if (occupancyRate > 80)
+                            {
+                                <span class="badge badge-warning">High Demand</span>
+                            }
+                        }
+                        else
+                        {
+                            <span class="badge badge-closed">Fully Booked</span>
+                        }
+                    </div>
+                </div>
+            }
+        </div>
+    }
+    else
+    {
+        <div class="no-data">
+            <p>No resort information available at the moment. Please check back later.</p>
+        </div>
+    }
+
+    <div class="back-link">
+        <a asp-controller="Information" asp-action="Index">← Back to Information Hub</a>
+    </div>
+</div>

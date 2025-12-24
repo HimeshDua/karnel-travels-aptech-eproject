@@ -1,0 +1,53 @@
+﻿@* Home Page Index *@
+@{
+    ViewData["Title"] = "Home";
+}
+
+<div class="home-hero">
+    <div class="container">
+        <h1>Welcome to Karnel Travel Guide</h1>
+        <p class="hero-subtitle">Your Comprehensive Guide to Exploring Our Beautiful Country</p>
+    </div>
+</div>
+
+<div class="container">
+    <section class="intro-section">
+        <h2>Discover Amazing Destinations</h2>
+        <p>
+            Karnel Travels is your trusted companion for exploring diverse landscapes, rich culture, and vibrant destinations.
+            Whether you're planning a relaxing beach vacation, an adventurous mountain trek, or a cultural city tour,
+            we provide all the information you need.
+        </p>
+    </section>
+
+    <section class="purpose-section">
+        <h2>Explore By Category</h2>
+        <div class="purpose-grid">
+            <div class="purpose-card">
+                <h3>🏖️ Tourist Spots</h3>
+                <p>Explore beaches, monuments, historical sites, and natural wonders.</p>
+            </div>
+            <div class="purpose-card">
+                <h3>🚂 Transportation</h3>
+                <p>Find information about trains, buses, flights, and travel routes.</p>
+            </div>
+            <div class="purpose-card">
+                <h3>🏨 Accommodation</h3>
+                <p>Browse hotels and resorts with detailed pricing and amenities.</p>
+            </div>
+            <div class="purpose-card">
+                <h3>🍽️ Dining</h3>
+                <p>Discover restaurants serving authentic local and international cuisine.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="quick-links" style="text-align: center; margin-top: 3rem;">
+        <h2>Start Your Journey</h2>
+        <div class="button-group">
+            <a asp-controller="Search" asp-action="Index" class="btn btn-primary">Search Destinations</a>
+            <a asp-controller="Information" asp-action="Index" class="btn btn-secondary">Browse Categories</a>
+            <a asp-controller="Home" asp-action="About" class="btn btn-secondary">About Us</a>
+        </div>
+    </section>
+</div>

@@ -1,0 +1,58 @@
+@model List<Hotel>
+@* Hotels Information Page *@
+@{
+    ViewData["Title"] = "Hotels";
+}
+
+<div class="page-header">
+    <div class="container">
+        <h1>Hotels</h1>
+        <p>Browse hotels across all major destinations. View amenities, pricing, quality ratings, and room availability.</p>
+    </div>
+</div>
+
+<div class="container">
+    <section class="info-intro">
+        <p>Our curated list of hotels includes options for every budget and preference. Each listing shows essential details to help you choose the perfect stay.</p>
+    </section>
+
+    @if (Model != null && Model.Any())
+    {
+        <div class="items-grid">
+            @foreach (var hotel in Model)
+            {
+                <div class="item-card @(hotel.Availability == 0 ? "unavailable" : "")">
+                    <div class="item-header">
+                        <h3>@hotel.Name</h3>
+                        @if (hotel.Availability == 0)
+                        {
+                            <span class="badge badge-closed">Fully Booked</span>
+                        }
+                        else
+                        {
+                            <span class="badge badge-success">@hotel.Availability rooms available</span>
+                        }
+                    </div>
+                    <div class="item-details">
+                        <p class="location"><strong>📍 Location:</strong> @hotel.Location</p>
+                        <p class="description">@hotel.Description</p>
+                        <div class="pricing-info">
+                            <p class="price"><strong>💰 Price:</strong> ₹@hotel.Price.ToString("N0") per night</p>
+                            <p class="quality"><strong>⭐ Quality:</strong> @hotel.Quality</p>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    }
+    else
+    {
+        <div class="no-data">
+            <p>No hotel information available at the moment. Please check back later.</p>
+        </div>
+    }
+
+    <div class="back-link">
+        <a asp-controller="Information" asp-action="Index">← Back to Information Hub</a>
+    </div>
+</div>

@@ -1,0 +1,73 @@
+@model List<Restaurant>
+@* Restaurants Information Page *@
+@{
+    ViewData["Title"] = "Restaurants";
+}
+
+<div class="page-header">
+    <div class="container">
+        <h1>Restaurants</h1>
+        <p>Discover delicious dining experiences. From local authentic cuisine to international flavors.</p>
+    </div>
+</div>
+
+<div class="container">
+    <section class="info-intro">
+        <p>
+            Explore a diverse selection of restaurants. Whether you're looking for fine dining or casual eats, find the perfect place to satisfy your culinary cravings.
+        </p>
+    </section>
+
+    @if (Model != null && Model.Any())
+    {
+        <div class="items-grid">
+            @foreach (var restaurant in Model)
+            {
+                <div class="item-card @(restaurant.Availability == 0 ? "unavailable" : "")">
+                    <div class="item-header">
+                        <h3>@restaurant.Name</h3>
+                        <span class="quality-badge">⭐ @restaurant.Quality</span>
+                    </div>
+
+                    <div class="item-details">
+                        <p class="location">
+                            <strong>📍 Location:</strong> @restaurant.Location
+                        </p>
+                        <p class="description">
+                            @restaurant.Description
+                        </p>
+                        <div class="pricing-info">
+                            <p class="price">
+                                <strong>💰 Price:</strong> ₹@restaurant.Price.ToString("N0") per person
+                            </p>
+                            <p class="availability">
+                                <strong>🪑 Seating:</strong> @restaurant.Availability seats available
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="item-footer">
+                        @if (restaurant.Availability > 0)
+                        {
+                            <span class="badge badge-success">Seats Available</span>
+                        }
+                        else
+                        {
+                            <span class="badge badge-closed">Fully Occupied</span>
+                        }
+                    </div>
+                </div>
+            }
+        </div>
+    }
+    else
+    {
+        <div class="no-data">
+            <p>No restaurant information available at the moment. Please check back later.</p>
+        </div>
+    }
+
+    <div class="back-link">
+        <a asp-controller="Information" asp-action="Index">← Back to Information Hub</a>
+    </div>
+</div>

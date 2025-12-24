@@ -1,0 +1,69 @@
+﻿@*
+    Shared Layout View - Main template for all pages in the application
+    Defines the global navigation menu and common structure
+    Includes links to: Home, About Us, Search, Information, Contact Us
+*@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Karnel Travel Guide</title>
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+</head>
+<body>
+    <header>
+        <!-- Global Navigation Menu - Visible on all pages -->
+        <nav class="navbar">
+            <div class="container">
+                <div class="navbar-brand">
+                    <a asp-controller="Home" asp-action="Index" class="logo">
+                        Karnel Travel Guide
+                    </a>
+                </div>
+                <ul class="nav-menu">
+                    @{
+                        var controller = ViewContext.RouteData.Values["controller"]?.ToString();
+                        var action = ViewContext.RouteData.Values["action"]?.ToString();
+                    }
+                    <li><a asp-controller="Home" asp-action="Index" class="@(controller == "Home" && action == "Index" ? "active" : "")">Home</a></li>
+                    <li><a asp-controller="Home" asp-action="About" class="@(controller == "Home" && action == "About" ? "active" : "")">About Us</a></li>
+                    <li><a asp-controller="Search" asp-action="Index" class="@(controller == "Search" ? "active" : "")">Search</a></li>
+                    <li><a asp-controller="Information" asp-action="Index" class="@(controller == "Information" ? "active" : "")">Information</a></li>
+                    <li><a asp-controller="Home" asp-action="Contact" class="@(controller == "Home" && action == "Contact" ? "active" : "")">Contact Us</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main role="main" class="main-content">
+        <!-- Display success/error messages from TempData -->
+        @if (TempData["SuccessMessage"] != null)
+        {
+            <div class="alert alert-success">
+                @TempData["SuccessMessage"]
+            </div>
+        }
+        @if (TempData["ErrorMessage"] != null)
+        {
+            <div class="alert alert-error">
+                @TempData["ErrorMessage"]
+            </div>
+        }
+
+        <!-- Page content will be rendered here -->
+        @RenderBody()
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; @DateTime.Now.Year - Karnel Travel Guide. All rights reserved.</p>
+            <p>Explore the beauty of our country with comprehensive travel information.</p>
+        </div>
+    </footer>
+
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
+

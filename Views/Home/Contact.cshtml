@@ -1,0 +1,93 @@
+@model Feedback
+@* Contact Us Page *@
+@{
+    ViewData["Title"] = "Contact Us";
+}
+
+<div class="page-header">
+    <div class="container">
+        <h1>Contact Us</h1>
+        <p>We'd Love to Hear From You</p>
+    </div>
+</div>
+
+<div class="container">
+    <div class="contact-layout">
+        <!-- Company Contact Details Section -->
+        <section class="contact-info">
+            <h2>Get In Touch</h2>
+            <div class="contact-details">
+                <div class="contact-item">
+                    <h3>📍 Office Address</h3>
+                    <p>
+                        Karnel Travels Pvt. Ltd.<br />
+                        123 Travel Street, Tourism Center<br />
+                        Mumbai, Maharashtra 400001
+                    </p>
+                </div>
+
+                <div class="contact-item">
+                    <h3>📞 Phone</h3>
+                    <p>
+                        Main: +91 22 1234 5678<br />
+                        Support: +91 22 8765 4321
+                    </p>
+                </div>
+
+                <div class="contact-item">
+                    <h3>📧 Email</h3>
+                    <p>
+                        info@karneltravels.com<br />
+                        support@karneltravels.com
+                    </p>
+                </div>
+
+                <div class="contact-item">
+                    <h3>⏰ Business Hours</h3>
+                    <p>
+                        Mon - Fri: 9:00 AM - 6:00 PM<br />
+                        Sat: 10:00 AM - 4:00 PM<br />
+                        Sun: Closed
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact/Feedback Form Section -->
+        <section class="contact-form-section">
+            <h2>Send Us a Message</h2>
+            <p>Have questions or feedback? Fill out the form below.</p>
+
+            <form asp-controller="Home" asp-action="SubmitContact" method="post" class="contact-form">
+                <div asp-validation-summary="ModelOnly" class="validation-summary"></div>
+
+                <div class="form-group">
+                    <label asp-for="Name">Your Name *</label>
+                    <input asp-for="Name" class="form-control" placeholder="Enter your full name" />
+                    <span asp-validation-for="Name" class="validation-error"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Email">Email Address *</label>
+                    <input asp-for="Email" type="email" class="form-control" placeholder="your.email@example.com" />
+                    <span asp-validation-for="Email" class="validation-error"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Message">Message *</label>
+                    <textarea asp-for="Message" class="form-control" rows="6" placeholder="Write your message..."></textarea>
+                    <span asp-validation-for="Message" class="validation-error"></span>
+                </div>
+
+                <div class="form-actions">
+                    <button type="submit" class="btn btn-primary">Send Message</button>
+                    <button type="reset" class="btn btn-secondary">Clear Form</button>
+                </div>
+            </form>
+        </section>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

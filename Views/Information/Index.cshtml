@@ -1,0 +1,66 @@
+@* Information Hub Page *@
+@{
+    ViewData["Title"] = "Information";
+}
+
+<div class="page-header">
+    <div class="container">
+        <h1>Travel Information</h1>
+        <p>Browse comprehensive information about destinations, accommodations, and services</p>
+    </div>
+</div>
+
+<div class="container">
+    <section class="info-hub">
+        <h2>Select a Category</h2>
+        <p>Choose from the following categories to explore detailed information:</p>
+
+        <div class="info-cards">
+            <!-- Tourist Spots -->
+            <a asp-controller="Information" asp-action="TouristSpots" class="info-card">
+                <div class="icon">🏖️</div>
+                <h3>Tourist Spots</h3>
+                <p>Explore beaches, monuments, and historical sites with detailed guides.</p>
+                <span class="link-arrow">→</span>
+            </a>
+
+            <!-- Travel Info -->
+            <a asp-controller="Information" asp-action="TravelInfo" class="info-card">
+                <div class="icon">🚂</div>
+                <h3>Travel Info</h3>
+                <p>Find transportation details including trains, buses, and flights.</p>
+                <span class="link-arrow">→</span>
+            </a>
+
+            <!-- Hotels -->
+            <a asp-controller="Information" asp-action="Hotels" class="info-card">
+                <div class="icon">🏨</div>
+                <h3>Hotels</h3>
+                <p>Browse accommodation options with amenities and pricing details.</p>
+                <span class="link-arrow">→</span>
+            </a>
+
+            <!-- Restaurants -->
+            <a asp-controller="Information" asp-action="Restaurants" class="info-card">
+                <div class="icon">🍽️</div>
+                <h3>Restaurants</h3>
+                <p>Discover dining experiences, local cuisine, and top-rated spots.</p>
+                <span class="link-arrow">→</span>
+            </a>
+
+            <!-- Resorts -->
+            <a asp-controller="Information" asp-action="Resorts" class="info-card">
+                <div class="icon">🏝️</div>
+                <h3>Resorts</h3>
+                <p>Find luxury stays, recreational facilities, and spa retreats.</p>
+                <span class="link-arrow">→</span>
+            </a>
+        </div>
+    </section>
+
+    <div class="cta-section" style="margin-top: 3rem;">
+        <h2>Looking for something specific?</h2>
+        <p>Use our advanced search to filter by price, location, and quality.</p>
+        <a asp-controller="Search" asp-action="Index" class="btn btn-primary">Go to Search</a>
+    </div>
+</div>
