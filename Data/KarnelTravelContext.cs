@@ -3,61 +3,29 @@ using karnel_travels_mvc.Models;
 
 namespace karnel_travels_mvc.Data
 {
-    /// <summary>
-    /// Database context for Karnel Travel Guide application
-    /// Manages all entity sets and database operations
-    /// </summary>D:\Coding Sessions\Karnel-Chachu\karnel-travels-mvc\Data\KarnelTravelContext.cs
     public class KarnelTravelContext : DbContext
     {
-        /// <summary>
-        /// Constructor accepting DbContextOptions
-        /// </summary>
-        /// <param name="options">Database context configuration options</param>
         public KarnelTravelContext(DbContextOptions<KarnelTravelContext> options)
             : base(options)
         {
         }
 
-        /// <summary>
-        /// DbSet for tourist spots/locations
-        /// </summary>
         public DbSet<TouristSpot> TouristSpots { get; set; }
 
-        /// <summary>
-        /// DbSet for hotels
-        /// </summary>
         public DbSet<Hotel> Hotels { get; set; }
 
-        /// <summary>
-        /// DbSet for restaurants
-        /// </summary>
         public DbSet<Restaurant> Restaurants { get; set; }
 
-        /// <summary>
-        /// DbSet for resorts
-        /// </summary>
         public DbSet<Resort> Resorts { get; set; }
 
-        /// <summary>
-        /// DbSet for travel/transportation information
-        /// </summary>
         public DbSet<TravelInfo> TravelInfos { get; set; }
 
-        /// <summary>
-        /// DbSet for user feedback and contact submissions
-        /// </summary>
         public DbSet<Feedback> Feedbacks { get; set; }
         
-        /// <summary>
-        /// Configures the model and seeds initial data
-        /// Called when the model for a context is being created
-        /// </summary>
-        /// <param name="modelBuilder">Model builder instance</param>
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
 
-            // Seed Tourist Spots data
             modelBuilder.Entity<TouristSpot>().HasData(
                 new TouristSpot
                 {
@@ -133,7 +101,6 @@ namespace karnel_travels_mvc.Data
                 }
             );
 
-            // Seed Hotels data
             modelBuilder.Entity<Hotel>().HasData(
                 new Hotel
                 {
@@ -207,7 +174,6 @@ namespace karnel_travels_mvc.Data
                 }
             );
 
-            // Seed Restaurants data
             modelBuilder.Entity<Restaurant>().HasData(
                 new Restaurant
                 {
@@ -281,7 +247,6 @@ namespace karnel_travels_mvc.Data
                 }
             );
 
-            // Seed Resorts data
             modelBuilder.Entity<Resort>().HasData(
                 new Resort
                 {
@@ -351,7 +316,6 @@ namespace karnel_travels_mvc.Data
                 }
             );
 
-            // Seed Travel Info data
             modelBuilder.Entity<TravelInfo>().HasData(
                 new TravelInfo
                 {

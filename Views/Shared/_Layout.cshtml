@@ -1,8 +1,4 @@
-﻿@*
-    Shared Layout View - Main template for all pages in the application
-    Defines the global navigation menu and common structure
-    Includes links to: Home, About Us, Search, Information, Contact Us
-*@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,21 +9,21 @@
 </head>
 <body>
     <header>
-        <!-- Global Navigation Menu - Visible on all pages -->
+        
         <nav class="navbar">
             <div class="nav-container">
                 <a asp-controller="Home" asp-action="Index" class="logo">
                     Karnel Travel Guide
                 </a>
 
-                <!-- Hamburger -->
+                
                 <button class="nav-toggle" aria-label="Toggle navigation">
                     <span></span>
                     <span></span>
                     <span></span>
                 </button>
 
-                <!-- Menu -->
+                
                 <ul class="nav-menu">
                     @{
                         var controller = ViewContext.RouteData.Values["controller"]?.ToString();
@@ -45,7 +41,7 @@
     </header>
 
     <main role="main" class="main-content">
-        <!-- Display success/error messages from TempData -->
+        
         @if (TempData["SuccessMessage"] != null)
         {
             <div class="alert alert-success">
@@ -59,7 +55,7 @@
             </div>
         }
 
-        <!-- Page content will be rendered here -->
+        
         @RenderBody()
     </main>
 

@@ -1,7 +1,5 @@
 @model SearchViewModel
-@*
-    Search Page - Main search functionality with filters
-*@
+
 @{
     ViewData["Title"] = "Search";
 }
@@ -30,7 +28,7 @@
 </div>
 
 <div class="container">
-    <!-- Search Form with Filters -->
+    
     <section class="search-form-section">
         <form asp-controller="Search" asp-action="Index" method="get" class="search-form">
             <div class="search-row">
@@ -100,13 +98,13 @@
         </form>
     </section>
 
-    <!-- Search Results Section -->
+    
     <section class="search-results">
         @if (Model != null && Model.HasResults)
         {
             <h2>Search Results (@Model.TotalResults found)</h2>
 
-            <!-- Tourist Spots Results -->
+            
             @if (Model.TouristSpots.Any())
             {
                 <div class="results-category">
@@ -137,7 +135,7 @@
                 </div>
             }
 
-            <!-- Hotels Results -->
+            
             @if (Model.Hotels.Any())
             {
                 <div class="results-category">
@@ -160,7 +158,7 @@
                 </div>
             }
 
-            <!-- Restaurants Results -->
+            
             @if (Model.Restaurants.Any())
             {
                 <div class="results-category">
@@ -183,7 +181,7 @@
                 </div>
             }
 
-            <!-- Resorts Results -->
+            
             @if (Model.Resorts.Any())
             {
                 <div class="results-category">

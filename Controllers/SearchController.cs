@@ -5,38 +5,17 @@ using karnel_travels_mvc.Models;
 
 namespace karnel_travels_mvc.Controllers
 {
-    /// <summary>
-    /// SearchController handles all search functionality
-    /// Allows searching across TouristSpots, Hotels, Restaurants, and Resorts
-    /// with filters for location, price, quality, and availability
-    /// </summary>
     public class SearchController : Controller
     {
         private readonly KarnelTravelContext _context;
         private readonly ILogger<SearchController> _logger;
 
-        /// <summary>
-        /// Constructor with dependency injection
-        /// </summary>
-        /// <param name="context">Database context</param>
-        /// <param name="logger">Logger for tracking search operations</param>
         public SearchController(KarnelTravelContext context, ILogger<SearchController> logger)
         {
             _context = context;
             _logger = logger;
         }
 
-        /// <summary>
-        /// GET: Search page - Displays search form and results
-        /// Shows all available tourist spots, hotels, restaurants, and resorts by default
-        /// </summary>
-        /// <param name="searchTerm">General search term (optional)</param>
-        /// <param name="location">Filter by location (optional)</param>
-        /// <param name="minPrice">Minimum price filter (optional)</param>
-        /// <param name="maxPrice">Maximum price filter (optional)</param>
-        /// <param name="quality">Quality filter (optional)</param>
-        /// <param name="availability">Availability filter (optional)</param>
-        /// <returns>Search view with filtered results</returns>
         public IActionResult Index(
             string? searchTerm,
             string? location,
@@ -48,10 +27,8 @@ namespace karnel_travels_mvc.Controllers
             _logger.LogInformation("Search page accessed with filters - SearchTerm: {SearchTerm}, Location: {Location}",
                 searchTerm, location);
 
-            // Create a view model to hold all search results
             var viewModel = new SearchViewModel();
 
-            // Query TouristSpots
             var touristSpotsQuery = _context.TouristSpots.AsQueryable();
 
             if (!string.IsNullOrEmpty(searchTerm))
@@ -78,8 +55,6 @@ namespace karnel_travels_mvc.Controllers
             }
 
             viewModel.TouristSpots = touristSpotsQuery.ToList();
-
-            // Query Hotels
             var hotelsQuery = _context.Hotels.AsQueryable();
 
             if (!string.IsNullOrEmpty(searchTerm))
@@ -116,8 +91,6 @@ namespace karnel_travels_mvc.Controllers
             }
 
             viewModel.Hotels = hotelsQuery.ToList();
-
-            // Query Restaurants
             var restaurantsQuery = _context.Restaurants.AsQueryable();
 
             if (!string.IsNullOrEmpty(searchTerm))
@@ -154,8 +127,6 @@ namespace karnel_travels_mvc.Controllers
             }
 
             viewModel.Restaurants = restaurantsQuery.ToList();
-
-            // Query Resorts
             var resortsQuery = _context.Resorts.AsQueryable();
 
             if (!string.IsNullOrEmpty(searchTerm))
@@ -193,7 +164,6 @@ namespace karnel_travels_mvc.Controllers
 
             viewModel.Resorts = resortsQuery.ToList();
 
-            // Store filter values in ViewData for repopulating form
             ViewData["SearchTerm"] = searchTerm;
             ViewData["Location"] = location;
             ViewData["MinPrice"] = minPrice;

@@ -1,15 +1,11 @@
-/*
- * Karnel Travel Guide - Design System
- * Shadcn/ui-inspired professional design system
- * No hardcoded colors - CSS variables only
- */
 
-/* ========== Google Fonts Import ========== */
+
+
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:wght@400;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
 
-/* ========== CSS Variables (Design Tokens) ========== */
+
 :root {
-    /* Colors */
+    
     --background: #ffffff;
     --foreground: #333333;
     --card: #ffffff;
@@ -36,19 +32,19 @@
     --sidebar-accent: #e0f2fe;
     --sidebar-accent-foreground: #1e3a8a;
     --sidebar-border: #e5e7eb;
-    /* Border Radius */
+    
     --radius: 0.375rem;
-    /* Typography */
+    
     --font-sans: Inter, sans-serif;
     --font-serif: Source Serif 4, serif;
     --font-mono: JetBrains Mono, monospace;
-    /* Shadows */
+    
     --shadow-sm: 0 1px 3px hsl(0 0% 0% / 0.1);
     --shadow-md: 0 2px 6px hsl(0 0% 0% / 0.1);
     --shadow-lg: 0 4px 12px hsl(0 0% 0% / 0.1);
 }
 
-/* ========== Reset and Base Styles ========== */
+
 * {
     margin: 0;
     padding: 0;
@@ -70,7 +66,7 @@ body {
     padding: 0 1.5rem;
 }
 
-/* ========== Typography ========== */
+
 h1, h2, h3, h4, h5, h6 {
     font-weight: 700;
     line-height: 1.2;
@@ -99,7 +95,7 @@ p {
     line-height: 1.6;
 }
 
-/* ========== Navigation Header ========== */
+
 header {
     background-color: var(--background);
     border-bottom: 1px solid var(--border);
@@ -108,7 +104,7 @@ header {
     z-index: 1000;
 }
 
-/* Navbar wrapper */
+
 .navbar {
     position: sticky;
     top: 0;
@@ -117,7 +113,7 @@ header {
     border-bottom: 1px solid var(--border);
 }
 
-/* Container */
+
 .nav-container {
     max-width: 1200px;
     margin: 0 auto;
@@ -128,7 +124,7 @@ header {
     justify-content: space-between;
 }
 
-/* Logo */
+
 .logo {
     font-size: 1.2rem;
     padding: 1em;
@@ -141,14 +137,14 @@ header {
         color: var(--primary);
     }
 
-/* Menu */
+
 .nav-menu {
     list-style: none;
     display: flex;
     gap: 0.25rem;
 }
 
-    /* Links */
+    
     .nav-menu a {
         padding: 0.5rem 0.9rem;
         border-radius: var(--radius);
@@ -168,7 +164,7 @@ header {
             background: var(--primary) / 10%;
         }
 
-/* Hamburger */
+
 .nav-toggle {
     display: none;
     flex-direction: column;
@@ -185,7 +181,7 @@ header {
         border-radius: 1px;
     }
 
-/* Mobile */
+
 @media (max-width: 768px) {
     .nav-toggle {
         display: flex;
@@ -213,13 +209,13 @@ header {
 }
 
 
-/* ========== Main Content ========== */
+
 .main-content {
     min-height: calc(100vh - 200px);
     padding: 2rem 0;
 }
 
-/* ========== Page Headers ========== */
+
 .page-header {
     background: linear-gradient(135deg, var(--primary) 0%, var(--accent-foreground) 100%);
     color: var(--primary-foreground);
@@ -240,7 +236,7 @@ header {
         margin: 0;
     }
 
-/* ========== Cards ========== */
+
 .card {
     background: var(--card);
     border: 1px solid var(--border);
@@ -254,7 +250,7 @@ header {
         transform: translateY(-2px);
     }
 
-/* Info intro section */
+
 .info-intro {
     background: var(--card);
     padding: 1.5rem;
@@ -264,8 +260,8 @@ header {
     color: var(--muted-foreground);
 }
 
-/* Item cards grid */
-/* ===== Items Grid ===== */
+
+
 .items-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
@@ -273,7 +269,7 @@ header {
     margin: 3rem 0;
 }
 
-/* ===== Item Card ===== */
+
 .item-card {
     background: var(--card);
     border: 1px solid var(--border);
@@ -290,13 +286,13 @@ header {
         box-shadow: var(--shadow-md);
     }
 
-    /* Unavailable */
+    
     .item-card.is-unavailable {
         opacity: 0.7;
         pointer-events: none;
     }
 
-/* ===== Header ===== */
+
 .item-card-header {
     display: flex;
     justify-content: space-between;
@@ -311,7 +307,7 @@ header {
     margin: 0;
 }
 
-/* Status badge */
+
 .status-badge {
     font-size: 0.75rem;
     padding: 0.3rem 0.6rem;
@@ -329,7 +325,7 @@ header {
         color: var(--muted-foreground);
     }
 
-/* ===== Body ===== */
+
 .item-card-body {
     flex: 1;
 }
@@ -346,7 +342,7 @@ header {
     color: var(--foreground);
 }
 
-/* ===== Meta ===== */
+
 .item-card-meta {
     display: flex;
     justify-content: space-between;
@@ -370,7 +366,7 @@ header {
         color: var(--primary);
     }
 
-/* ===== Mobile ===== */
+
 @media (max-width: 480px) {
     .item-card-meta {
         flex-direction: column;
@@ -379,7 +375,7 @@ header {
     }
 }
 
-/* ===== Travel Information Header ===== */
+
 .travel-header {
     background: linear-gradient( 135deg, color-mix(in srgb, var(--primary), black 22%), color-mix(in srgb, var(--primary), black 48%) );
     position: relative;
@@ -392,7 +388,7 @@ header {
     }
 
 
-/* ===== Hotels Header ===== */
+
 .hotels-header {
     background: linear-gradient( 135deg, color-mix(in srgb, var(--primary), black 18%), color-mix(in srgb, var(--primary), black 45%) );
     position: relative;
@@ -404,7 +400,7 @@ header {
         text-align: center;
     }
 
-/* Meta row */
+
 .header-meta {
     margin-top: 1.75rem;
     display: flex;
@@ -421,14 +417,14 @@ header {
         gap: 0.35rem;
     }
 
-/* Mobile */
+
 @media (max-width: 640px) {
     .header-meta {
         gap: 0.75rem;
     }
 }
 
-/* ===== Tourist Spots Header ===== */
+
 .spots-header {
     background: linear-gradient( 135deg, color-mix(in srgb, var(--primary), black 10%), color-mix(in srgb, var(--primary), black 35%) );
     position: relative;
@@ -440,14 +436,14 @@ header {
         text-align: center;
     }
 
-    /* Meta row reuse */
+    
     .spots-header .header-meta {
         margin-top: 1.75rem;
     }
 
 
 
-/* ========== Buttons ========== */
+
 .btn {
     display: inline-block;
     padding: 0.625rem 1.25rem;
@@ -479,7 +475,7 @@ header {
         opacity: 0.9;
     }
 
-/* ========== Badges ========== */
+
 .badge {
     display: inline-block;
     padding: 0.25rem 0.75rem;
@@ -503,7 +499,7 @@ header {
     color: var(--secondary-foreground);
 }
 
-/* ========== Forms ========== */
+
 .form-group {
     margin-bottom: 1.5rem;
 }
@@ -544,7 +540,7 @@ header {
     margin-top: 1.5rem;
 }
 
-/* ========== Search Page ========== */
+
 .search-form-section {
     background: var(--card);
     padding: 2rem;
@@ -567,7 +563,7 @@ header {
     margin-top: 1.5rem;
 }
 
-/* ========== Search Results ========== */
+
 .search-results {
     margin-top: 2rem;
 }
@@ -646,7 +642,7 @@ header {
         color: var(--primary);
     }
 
-/* ========== Empty States ========== */
+
 .no-results, .initial-message, .no-data {
     background: var(--card);
     padding: 3rem 2rem;
@@ -667,7 +663,7 @@ header {
         margin: 0;
     }
 
-/* ========== Alerts ========== */
+
 .alert {
     padding: 1rem 1.5rem;
     margin: 1rem auto;
@@ -688,13 +684,13 @@ header {
     border: 1px solid var(--destructive);
 }
 
-/* ========== Information Hub ========== */
-/* ===== Information Header ===== */
+
+
 .info-header {
     background: linear-gradient( 135deg, color-mix(in srgb, var(--primary), black 20%), color-mix(in srgb, var(--primary), black 45%) );
 }
 
-/* ===== Intro ===== */
+
 .info-intro {
     text-align: center;
     max-width: 700px;
@@ -705,7 +701,7 @@ header {
         color: var(--muted-foreground);
     }
 
-/* ===== Cards ===== */
+
 .info-cards {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -728,7 +724,7 @@ header {
         box-shadow: var(--shadow-md);
     }
 
-/* Card top */
+
 .card-top {
     display: flex;
     justify-content: space-between;
@@ -748,7 +744,7 @@ header {
     color: var(--accent-foreground);
 }
 
-/* Arrow */
+
 .info-card .link-arrow {
     position: absolute;
     bottom: 1.5rem;
@@ -762,7 +758,7 @@ header {
     transform: translateX(4px);
 }
 
-/* ===== CTA ===== */
+
 .cta-section {
     margin-top: 5rem;
     text-align: center;
@@ -773,7 +769,7 @@ header {
 }
 
 
-/* ========== Home Page ========== */
+
 .home-hero {
     text-align: center;
     position: relative;
@@ -845,7 +841,7 @@ header {
         background: rgba(255,255,255,0.15);
     }
 
-/* Mobile tuning */
+
 @media (max-width: 640px) {
     .home-hero {
         padding: 4.5rem 0 4rem;
@@ -921,7 +917,7 @@ header {
     flex-wrap: wrap;
     justify-content: center;
 }
-/* ===== About Page Header ===== */
+
 .page-header {
     position: relative;
     padding: 5rem 0 4rem;
@@ -937,14 +933,14 @@ header {
     pointer-events: none;
 }
 
-/* Content */
+
 .header-content {
     position: relative;
     max-width: 760px;
     text-align: center;
 }
 
-/* Eyebrow */
+
 .header-eyebrow {
     display: inline-block;
     margin-bottom: 0.75rem;
@@ -954,7 +950,7 @@ header {
     opacity: 0.85;
 }
 
-/* Title */
+
 .page-header h1 {
     font-size: clamp(2rem, 4.5vw, 2.8rem);
     font-weight: 800;
@@ -966,7 +962,7 @@ header {
         color: var(--accent);
     }
 
-/* Subtitle */
+
 .header-subtitle {
     font-size: clamp(1rem, 2vw, 1.15rem);
     opacity: 0.95;
@@ -976,7 +972,7 @@ header {
     text-wrap: pretty;
 }
 
-/* ===== About Layout ===== */
+
 .about-layout {
     display: flex;
     flex-direction: column;
@@ -984,7 +980,7 @@ header {
     margin-top: 4rem;
 }
 
-/* ===== Overview ===== */
+
 .about-overview {
     display: grid;
     grid-template-columns: 1.2fr 0.8fr;
@@ -1003,7 +999,7 @@ header {
     line-height: 1.6;
 }
 
-/* Stats */
+
 .overview-stats {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -1029,7 +1025,7 @@ header {
         color: var(--muted-foreground);
     }
 
-/* ===== Services ===== */
+
 .about-services h2 {
     text-align: center;
     margin-bottom: 2.5rem;
@@ -1070,7 +1066,7 @@ header {
         font-size: 0.95rem;
     }
 
-/* ===== Values ===== */
+
 .about-values {
     background: linear-gradient( 135deg, var(--card), color-mix(in srgb, var(--card), var(--primary) 6%) );
     border: 1px solid var(--border);
@@ -1085,7 +1081,7 @@ header {
         color: var(--muted-foreground);
     }
 
-/* ===== CTA ===== */
+
 .about-cta {
     text-align: center;
     padding: 3rem 2rem;
@@ -1099,7 +1095,7 @@ header {
         opacity: 0.95;
     }
 
-/* ===== Mobile ===== */
+
 @media (max-width: 768px) {
     .about-overview {
         grid-template-columns: 1fr;
@@ -1112,7 +1108,7 @@ header {
 }
 
 
-/* Mobile tuning */
+
 @media (max-width: 640px) {
     .page-header {
         padding: 4rem 0 3.5rem;
@@ -1120,7 +1116,7 @@ header {
 }
 
 
-/* ========== Contact Page ========== */
+
 .contact-layout {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -1163,7 +1159,7 @@ header {
     }
 
 
-/* ===== Contact Header ===== */
+
 .contact-header {
     background: linear-gradient( 135deg, color-mix(in srgb, var(--primary), black 16%), color-mix(in srgb, var(--primary), black 40%) );
     position: relative;
@@ -1177,7 +1173,7 @@ header {
 
 
 
-/* ===== Search Header ===== */
+
 .search-header {
     background: linear-gradient( 135deg, color-mix(in srgb, var(--primary), black 20%), color-mix(in srgb, var(--primary), black 46%) );
     position: relative;
@@ -1190,7 +1186,7 @@ header {
     }
 
 
-/* ===== Restaurants Header ===== */
+
 .restaurants-header {
     background: linear-gradient( 135deg, color-mix(in srgb, var(--primary), black 14%), color-mix(in srgb, var(--primary), black 38%) );
     position: relative;
@@ -1202,7 +1198,7 @@ header {
         text-align: center;
     }
 
-/* ===== Resorts Header ===== */
+
 .resorts-header {
     background: linear-gradient( 135deg, color-mix(in srgb, var(--primary), black 12%), color-mix(in srgb, var(--primary), black 36%) );
     position: relative;
@@ -1214,7 +1210,7 @@ header {
         text-align: center;
     }
 
-/* ========== Info Notes and Back Links ========== */
+
 .info-note {
     background: var(--secondary);
     padding: 1rem;
@@ -1244,7 +1240,7 @@ header {
             text-decoration: underline;
         }
 
-/* ========== Validation ========== */
+
 .validation-summary {
     background-color: var(--destructive);
     color: var(--destructive-foreground);
@@ -1260,7 +1256,7 @@ header {
     display: block;
 }
 
-/* ========== Footer ========== */
+
 footer {
     background-color: var(--muted);
     color: var(--foreground);
@@ -1275,7 +1271,7 @@ footer {
         color: var(--muted-foreground);
     }
 
-/* ========== Responsive Design ========== */
+
 @media (max-width: 768px) {
     .container {
         padding: 0 1rem;

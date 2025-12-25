@@ -1,5 +1,5 @@
 @model List<Hotel>
-@* Hotels Information Page *@
+
 @{
     ViewData["Title"] = "Hotels";
 }
@@ -40,7 +40,7 @@
             {
                 <article class="item-card @(hotel.Availability == 0 ? "is-unavailable" : "")">
 
-                    <!-- Header -->
+                    
                     <header class="item-card-header">
                         <h3 class="item-title">@hotel.Name</h3>
 
@@ -56,7 +56,7 @@
                         }
                     </header>
 
-                    <!-- Body -->
+                    
                     <div class="item-card-body">
                         <p class="item-location">📍 @hotel.Location</p>
                         <p class="item-description">
@@ -64,7 +64,7 @@
                         </p>
                     </div>
 
-                    <!-- Meta -->
+                    
                     <footer class="item-card-meta">
                         <div class="meta price">
                             <span>💰</span>
