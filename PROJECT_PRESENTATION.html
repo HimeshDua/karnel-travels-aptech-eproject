@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+  <title>Karnel Travel Guide Presentation</title>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/reset.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/reveal.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/theme/white.min.css">
+
+  <!-- Theme used for syntax highlighted code -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/plugin/highlight/monokai.min.css">
+</head>
+
+<body>
+  <div class="reveal">
+    <div class="slides">
+      <section>
+        <h1>Karnel Travel Guide</h1>
+        <h3>A Comprehensive Travel Information System</h3>
+        <p>Built with ASP.NET Core MVC</p>
+      </section>
+
+      <section>
+        <h2>Introduction</h2>
+        <p><strong>Karnel Travel Guide</strong> is a web-based information system designed to provide tourists with
+          detailed insights about destinations, accommodations, and transportation.</p>
+        <ul>
+          <li><strong>Centralized Platform</strong>: One-stop shop for travel info.</li>
+          <li><strong>No Booking Required</strong>: Purely informational focus.</li>
+          <li><strong>User-Friendly</strong>: Simple, clean, and responsive.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Problem Statement</h2>
+        <p>Travelers often face:</p>
+        <ol>
+          <li><strong>Fragmented Information</strong>: Data scattered across sites.</li>
+          <li><strong>Comparison Issues</strong>: Hard to compare prices.</li>
+          <li><strong>Accessibility</strong>: Lack of centralized search.</li>
+        </ol>
+      </section>
+
+      <section>
+        <h2>The Solution</h2>
+        <ul>
+          <li><strong>Centralizing Data</strong>: All entities in one DB.</li>
+          <li><strong>Intuitive Search</strong>: Filter by Price, Location, Quality.</li>
+          <li><strong>Categorization</strong>: Clear separation of services.</li>
+          <li><strong>Transparency</strong>: Availability and capacity display.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Key Features</h2>
+        <ul>
+          <li>🌍 <strong>Global Navigation</strong></li>
+          <li>🔍 <strong>Advanced Search</strong> (Location, Price, Rating)</li>
+          <li>🏨 <strong>Information Hub</strong> (Hotels, Spots, etc.)</li>
+          <li>📝 <strong>Feedback System</strong></li>
+          <li>📱 <strong>Responsive Design</strong></li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Technical Stack</h2>
+        <ul>
+          <li><strong>Framework</strong>: ASP.NET Core MVC (.NET 10)</li>
+          <li><strong>Language</strong>: C#</li>
+          <li><strong>Database</strong>: SQL Server (LocalDB)</li>
+          <li><strong>ORM</strong>: Entity Framework Core 10.0</li>
+          <li><strong>Frontend</strong>: Razor Views, HTML5, CSS3</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Database Design</h2>
+        <p>6 Independent Entities:</p>
+        <ol>
+          <li>TouristSpots</li>
+          <li>Hotels</li>
+          <li>Restaurants</li>
+          <li>Resorts</li>
+          <li>TravelInfos</li>
+          <li>Feedbacks</li>
+        </ol>
+      </section>
+
+      <section>
+        <h2>Future Scope</h2>
+        <ul>
+          <li>🔐 User Authentication</li>
+          <li>📅 Booking Logic Implementation</li>
+          <li>💳 Payment Gateway</li>
+          <li>📊 Admin Dashboard</li>
+          <li>🌐 REST API</li>
+        </ul>
+      </section>
+
+      <section>
+        <h1>Thank You!</h1>
+        <h3>Questions?</h3>
+      </section>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/reveal.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/plugin/notes/notes.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/plugin/markdown/markdown.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/plugin/highlight/highlight.min.js"></script>
+  <script>
+    // More info about initialization & config:
+    // - https://revealjs.com/initialization/
+    // - https://revealjs.com/config/
+    Reveal.initialize({
+      hash: true,
+      // Learn about plugins: https://revealjs.com/plugins/
+      plugins: [RevealMarkdown, RevealHighlight, RevealNotes]
+    });
+  </script>
+</body>
+
+</html>
