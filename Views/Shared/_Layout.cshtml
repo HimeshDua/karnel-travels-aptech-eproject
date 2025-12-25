@@ -15,25 +15,33 @@
     <header>
         <!-- Global Navigation Menu - Visible on all pages -->
         <nav class="navbar">
-            <div class="container">
-                <div class="navbar-brand">
-                    <a asp-controller="Home" asp-action="Index" class="logo">
-                        Karnel Travel Guide
-                    </a>
-                </div>
+            <div class="nav-container">
+                <a asp-controller="Home" asp-action="Index" class="logo">
+                    Karnel Travel Guide
+                </a>
+
+                <!-- Hamburger -->
+                <button class="nav-toggle" aria-label="Toggle navigation">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+
+                <!-- Menu -->
                 <ul class="nav-menu">
                     @{
                         var controller = ViewContext.RouteData.Values["controller"]?.ToString();
                         var action = ViewContext.RouteData.Values["action"]?.ToString();
                     }
                     <li><a asp-controller="Home" asp-action="Index" class="@(controller == "Home" && action == "Index" ? "active" : "")">Home</a></li>
-                    <li><a asp-controller="Home" asp-action="About" class="@(controller == "Home" && action == "About" ? "active" : "")">About Us</a></li>
+                    <li><a asp-controller="Home" asp-action="About" class="@(controller == "Home" && action == "About" ? "active" : "")">About</a></li>
                     <li><a asp-controller="Search" asp-action="Index" class="@(controller == "Search" ? "active" : "")">Search</a></li>
                     <li><a asp-controller="Information" asp-action="Index" class="@(controller == "Information" ? "active" : "")">Information</a></li>
-                    <li><a asp-controller="Home" asp-action="Contact" class="@(controller == "Home" && action == "Contact" ? "active" : "")">Contact Us</a></li>
+                    <li><a asp-controller="Home" asp-action="Contact" class="@(controller == "Home" && action == "Contact" ? "active" : "")">Contact</a></li>
                 </ul>
             </div>
         </nav>
+
     </header>
 
     <main role="main" class="main-content">

@@ -3,59 +3,90 @@
     ViewData["Title"] = "Information";
 }
 
-<div class="page-header">
-    <div class="container">
-        <h1>Travel Information</h1>
-        <p>Browse comprehensive information about destinations, accommodations, and services</p>
+<div class="page-header info-header">
+    <div class="header-overlay"></div>
+
+    <div class="container header-content">
+        <span class="header-eyebrow">Information Hub</span>
+
+        <h1>
+            Everything You Need to <span>Plan Your Journey</span>
+        </h1>
+
+        <p class="header-subtitle">
+            Explore destinations, transport, accommodation, dining,
+            and resort information — all in one place.
+        </p>
     </div>
 </div>
 
+
 <div class="container">
+    <section class="info-intro">
+        <h2>What are you looking for?</h2>
+        <p>
+            Select a category below to explore detailed, up-to-date information
+            curated to help you plan with confidence.
+        </p>
+    </section>
+
     <section class="info-hub">
         <h2>Select a Category</h2>
         <p>Choose from the following categories to explore detailed information:</p>
 
         <div class="info-cards">
-            <!-- Tourist Spots -->
             <a asp-controller="Information" asp-action="TouristSpots" class="info-card">
-                <div class="icon">🏖️</div>
+                <div class="card-top">
+                    <span class="icon">🏖️</span>
+                    <span class="badge">Explore</span>
+                </div>
                 <h3>Tourist Spots</h3>
-                <p>Explore beaches, monuments, and historical sites with detailed guides.</p>
+                <p>Beaches, monuments, heritage sites, and natural attractions.</p>
                 <span class="link-arrow">→</span>
             </a>
 
-            <!-- Travel Info -->
             <a asp-controller="Information" asp-action="TravelInfo" class="info-card">
-                <div class="icon">🚂</div>
+                <div class="card-top">
+                    <span class="icon">🚂</span>
+                    <span class="badge">Travel</span>
+                </div>
                 <h3>Travel Info</h3>
-                <p>Find transportation details including trains, buses, and flights.</p>
+                <p>Trains, buses, flights, routes, and connectivity details.</p>
                 <span class="link-arrow">→</span>
             </a>
 
-            <!-- Hotels -->
             <a asp-controller="Information" asp-action="Hotels" class="info-card">
-                <div class="icon">🏨</div>
+                <div class="card-top">
+                    <span class="icon">🏨</span>
+                    <span class="badge">Stay</span>
+                </div>
                 <h3>Hotels</h3>
-                <p>Browse accommodation options with amenities and pricing details.</p>
+                <p>Hotels and accommodations with amenities and pricing.</p>
                 <span class="link-arrow">→</span>
             </a>
 
-            <!-- Restaurants -->
             <a asp-controller="Information" asp-action="Restaurants" class="info-card">
-                <div class="icon">🍽️</div>
+                <div class="card-top">
+                    <span class="icon">🍽️</span>
+                    <span class="badge">Dine</span>
+                </div>
                 <h3>Restaurants</h3>
-                <p>Discover dining experiences, local cuisine, and top-rated spots.</p>
+                <p>Local cuisine, popular restaurants, and dining experiences.</p>
                 <span class="link-arrow">→</span>
             </a>
 
-            <!-- Resorts -->
             <a asp-controller="Information" asp-action="Resorts" class="info-card">
-                <div class="icon">🏝️</div>
+                <div class="card-top">
+                    <span class="icon">🏝️</span>
+                    <span class="badge">Relax</span>
+                </div>
                 <h3>Resorts</h3>
-                <p>Find luxury stays, recreational facilities, and spa retreats.</p>
+                <p>Luxury resorts, spa retreats, and recreational stays.</p>
                 <span class="link-arrow">→</span>
             </a>
         </div>
+
+
     </section>
 
     <div class="cta-section" style="margin-top: 3rem;">

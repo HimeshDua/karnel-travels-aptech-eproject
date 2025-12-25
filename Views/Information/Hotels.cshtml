@@ -4,12 +4,29 @@
     ViewData["Title"] = "Hotels";
 }
 
-<div class="page-header">
-    <div class="container">
-        <h1>Hotels</h1>
-        <p>Browse hotels across all major destinations. View amenities, pricing, quality ratings, and room availability.</p>
+<div class="page-header hotels-header">
+    <div class="header-overlay"></div>
+
+    <div class="container header-content">
+        <span class="header-eyebrow">Accommodation</span>
+
+        <h1>
+            Find the Right <span>Hotel for Your Stay</span>
+        </h1>
+
+        <p class="header-subtitle">
+            Compare hotels by location, price, quality, and room availability
+            to choose the stay that fits your journey.
+        </p>
+
+        <div class="header-meta">
+            <span>🏨 Multiple Categories</span>
+            <span>💰 All Budget Ranges</span>
+            <span>⭐ Quality Rated</span>
+        </div>
     </div>
 </div>
+
 
 <div class="container">
     <section class="info-intro">
@@ -21,36 +38,57 @@
         <div class="items-grid">
             @foreach (var hotel in Model)
             {
-                <div class="item-card @(hotel.Availability == 0 ? "unavailable" : "")">
-                    <div class="item-header">
-                        <h3>@hotel.Name</h3>
+                <article class="item-card @(hotel.Availability == 0 ? "is-unavailable" : "")">
+
+                    <!-- Header -->
+                    <header class="item-card-header">
+                        <h3 class="item-title">@hotel.Name</h3>
+
                         @if (hotel.Availability == 0)
                         {
-                            <span class="badge badge-closed">Fully Booked</span>
+                            <span class="status-badge closed">Fully Booked</span>
                         }
                         else
                         {
-                            <span class="badge badge-success">@hotel.Availability rooms available</span>
+                            <span class="status-badge open">
+                                @hotel.Availability rooms
+                            </span>
                         }
+                    </header>
+
+                    <!-- Body -->
+                    <div class="item-card-body">
+                        <p class="item-location">📍 @hotel.Location</p>
+                        <p class="item-description">
+                            @hotel.Description
+                        </p>
                     </div>
-                    <div class="item-details">
-                        <p class="location"><strong>📍 Location:</strong> @hotel.Location</p>
-                        <p class="description">@hotel.Description</p>
-                        <div class="pricing-info">
-                            <p class="price"><strong>💰 Price:</strong> ₹@hotel.Price.ToString("N0") per night</p>
-                            <p class="quality"><strong>⭐ Quality:</strong> @hotel.Quality</p>
+
+                    <!-- Meta -->
+                    <footer class="item-card-meta">
+                        <div class="meta price">
+                            <span>💰</span>
+                            <strong>₹@hotel.Price.ToString("N0")</strong>
+                            <small>/ night</small>
                         </div>
-                    </div>
-                </div>
+
+                        <div class="meta quality">
+                            <span>⭐</span>
+                            <strong>@hotel.Quality</strong>
+                        </div>
+                    </footer>
+
+                </article>
             }
         </div>
     }
     else
     {
         <div class="no-data">
-            <p>No hotel information available at the moment. Please check back later.</p>
+            <p>No hotel information available at the moment.</p>
         </div>
     }
+
 
     <div class="back-link">
         <a asp-controller="Information" asp-action="Index">← Back to Information Hub</a>

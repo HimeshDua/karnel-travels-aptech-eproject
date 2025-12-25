@@ -4,63 +4,98 @@
 }
 
 <div class="page-header">
-    <div class="container">
-        <h1>About Karnel Travels</h1>
-        <p>Your Trusted Travel Information Partner</p>
+    <div class="header-overlay"></div>
+
+    <div class="container header-content">
+        <span class="header-eyebrow">Who We Are</span>
+
+        <h1>
+            Building Better <span>Travel Experiences</span>
+        </h1>
+
+        <p class="header-subtitle">
+            Karnel Travels is your trusted travel information partner,
+            helping explorers plan smarter journeys with confidence.
+        </p>
     </div>
 </div>
 
-<div class="container">
-    <section class="about-section">
-        <h2>Company Overview</h2>
-        <p>
-            Karnel Travels has been a leading provider of comprehensive travel information for over a decade.
-            We are dedicated to helping travelers discover the best destinations, accommodations, dining experiences,
-            and transportation options.
-        </p>
-        <p>
-            Our mission is to make travel planning easy, informative, and accessible to everyone through our
-            centralized platform.
-        </p>
-    </section>
+<div class="container about-layout">
 
-    <section class="services-section">
-        <h2>Our Services</h2>
+    <section class="about-overview">
+        <div class="overview-text">
+            <h2>Company Overview</h2>
+            <p>
+                Karnel Travels has been a trusted source of travel information for over a decade.
+                We help travelers explore destinations, accommodation, transport, and dining
+                with clarity and confidence.
+            </p>
+            <p>
+                Our goal is simple: remove confusion from travel planning and give you
+                everything you need in one reliable platform.
+            </p>
+        </div>
 
-        <div class="items-grid">
-            <div class="service-item">
-                <h3>🚗 Transportation Services</h3>
-                <p>Comprehensive information about trains, buses, flights, and ferries with route details and schedules.</p>
+        <div class="overview-stats">
+            <div class="stat">
+                <strong>10+</strong>
+                <span>Years Experience</span>
             </div>
-
-            <div class="service-item">
-                <h3>🎒 Tour Packages</h3>
-                <p>Curated tour package information including heritage tours, adventure packages, and beach holidays.</p>
+            <div class="stat">
+                <strong>500+</strong>
+                <span>Destinations</span>
             </div>
-
-            <div class="service-item">
-                <h3>🏨 Accommodation</h3>
-                <p>Detailed listings for hotels and resorts ranging from luxury properties to budget-friendly stays.</p>
-            </div>
-
-            <div class="service-item">
-                <h3>📍 Tourist Guides</h3>
-                <p>In-depth guides to destinations, hidden gems, and popular attractions to help you plan your itinerary.</p>
+            <div class="stat">
+                <strong>100%</strong>
+                <span>Information Focused</span>
             </div>
         </div>
     </section>
 
-    <section class="values-section">
+    <section class="about-services">
+        <h2>What We Provide</h2>
+
+        <div class="services-grid">
+            <div class="service-card">
+                <span class="icon">🚗</span>
+                <h3>Transportation</h3>
+                <p>Routes, schedules, and transport options across the country.</p>
+            </div>
+
+            <div class="service-card">
+                <span class="icon">🎒</span>
+                <h3>Tour Packages</h3>
+                <p>Curated information on adventure, heritage, and leisure tours.</p>
+            </div>
+
+            <div class="service-card">
+                <span class="icon">🏨</span>
+                <h3>Accommodation</h3>
+                <p>Hotels and resorts from luxury to budget-friendly stays.</p>
+            </div>
+
+            <div class="service-card">
+                <span class="icon">📍</span>
+                <h3>Tourist Guides</h3>
+                <p>Destination insights, attractions, and hidden gems.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="about-values">
         <h2>Our Commitment</h2>
         <p>
-            We are committed to providing accurate and up-to-date travel information. We continuously update our
-            database to ensure you have access to the latest details about destinations and services.
+            We focus on accuracy, clarity, and relevance. Our content is continuously updated
+            so travelers can rely on the information they find here.
         </p>
     </section>
 
-    <div class="cta-section">
-        <h2>Ready to explore?</h2>
-        <p>Start planning your next adventure today.</p>
-        <a asp-controller="Search" asp-action="Index" class="btn btn-primary">Get Started</a>
-    </div>
+    <section class="about-cta">
+        <h2>Ready to plan your journey?</h2>
+        <p>Start exploring destinations and travel options today.</p>
+        <a asp-controller="Search" asp-action="Index" class="btn btn-primary">
+            Start Exploring
+        </a>
+    </section>
+
 </div>

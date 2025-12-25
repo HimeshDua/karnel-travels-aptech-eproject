@@ -51,6 +51,14 @@ namespace karnel_travels_mvc.Controllers
             return View();
         }
 
+
+        public IActionResult Privacy()
+        {
+            _logger.LogInformation("Privacy page accessed");
+            return View();
+        }
+
+
         /// <summary>
         /// GET: Contact Us page - Display contact form and company details
         /// Shows contact information and feedback form for user submissions

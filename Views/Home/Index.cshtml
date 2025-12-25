@@ -4,11 +4,31 @@
 }
 
 <div class="home-hero">
-    <div class="container">
-        <h1>Welcome to Karnel Travel Guide</h1>
-        <p class="hero-subtitle">Your Comprehensive Guide to Exploring Our Beautiful Country</p>
+    <div class="hero-overlay"></div>
+
+    <div class="container hero-content">
+        <span class="hero-eyebrow">Explore • Discover • Travel</span>
+
+        <h1>
+            Discover Your Next <span>Unforgettable Journey</span>
+        </h1>
+
+        <p class="hero-subtitle">
+            Karnel Travel Guide helps you explore destinations, transport, stays,
+            and food — all in one place.
+        </p>
+
+        <div class="hero-actions">
+            <a asp-controller="Search" asp-action="Index" class="btn btn-primary">
+                Start Exploring
+            </a>
+            <a asp-controller="Information" asp-action="Index" class="btn btn-outline">
+                Browse Categories
+            </a>
+        </div>
     </div>
 </div>
+
 
 <div class="container">
     <section class="intro-section">
