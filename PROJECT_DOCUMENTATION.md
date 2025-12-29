@@ -12,6 +12,8 @@
 9. [Unit Testing Checklist](#unit-testing-checklist)
 10. [Run Instructions](#run-instructions)
 11. [Final Checklist](#final-checklist)
+12. [Project Team](#project-team)
+13. [Project Screenshots](#project-screenshots)
 
 ---
 
@@ -796,6 +798,41 @@ dotnet build
 - [x] Project compiles without errors
 - [x] Application runs successfully
 - [x] Database created and seeded
+
+---
+
+## PROJECT TEAM
+
+### Faculty Guide
+- **Name**: Susheel Kumar
+- **Role**: Faculty & Project Mentor
+
+### Student Team Members
+1. **MUHAMMAD SAAD**
+2. **HIMESH**
+3. **MUHAMMAD HASHIR EDHI**
+4. **MUHAMMAD ISMAIL**
+
+---
+
+## PROJECT SCREENSHOTS
+
+### Home Page
+![Home Page](wwwroot/screenshots/home-page.png)
+
+### About Page
+![About Page](wwwroot/screenshots/about-page.png)
+
+### Search Page
+![Search Page](wwwroot/screenshots/search-page.png)
+![Search Page Results](wwwroot/screenshots/search-page-second-half.png)
+
+### Information Hub
+![Information Hub](wwwroot/screenshots/information-page.png)
+![Information Categories](wwwroot/screenshots/information-page-second-half.png)
+
+### Contact Page
+![Contact Page](wwwroot/screenshots/contact-page.png)
 
 ---
 
