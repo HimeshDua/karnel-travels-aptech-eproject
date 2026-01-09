@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using karnel_travels_mvc.Data;
 
@@ -11,9 +12,11 @@ using karnel_travels_mvc.Data;
 namespace karnel_travels_mvc.Migrations
 {
     [DbContext(typeof(KarnelTravelContext))]
-    partial class KarnelTravelContextModelSnapshot : ModelSnapshot
+    [Migration("20260109144714_location-changes")]
+    partial class locationchanges
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -161,116 +164,6 @@ namespace karnel_travels_mvc.Migrations
                             Name = "Shangrila Resort Hotel",
                             Price = 16000m,
                             Quality = "4-Star"
-                        },
-                        new
-                        {
-                            Id = 8,
-                            Availability = 20,
-                            Description = "Luxury hotel in Islamabad with modern amenities.",
-                            Location = "Islamabad",
-                            Name = "Islamabad Marriott Hotel",
-                            Price = 23000m,
-                            Quality = "5-Star"
-                        },
-                        new
-                        {
-                            Id = 9,
-                            Availability = 18,
-                            Description = "Luxury hotel on Mall Road with historic charm.",
-                            Location = "Lahore",
-                            Name = "Avari Towers Lahore",
-                            Price = 20000m,
-                            Quality = "5-Star"
-                        },
-                        new
-                        {
-                            Id = 10,
-                            Availability = 15,
-                            Description = "5-star hotel serving Islamabad/Rawalpindi area.",
-                            Location = "Rawalpindi",
-                            Name = "Pearl Continental Rawalpindi",
-                            Price = 22000m,
-                            Quality = "5-Star"
-                        },
-                        new
-                        {
-                            Id = 11,
-                            Availability = 18,
-                            Description = "Downtown luxury hotel with international brand.",
-                            Location = "Karachi",
-                            Name = "Karachi Marriott Hotel",
-                            Price = 25000m,
-                            Quality = "5-Star"
-                        },
-                        new
-                        {
-                            Id = 12,
-                            Availability = 22,
-                            Description = "Modern hotel in Clifton area with upscale dining.",
-                            Location = "Karachi",
-                            Name = "Hilton Karachi",
-                            Price = 18000m,
-                            Quality = "5-Star"
-                        },
-                        new
-                        {
-                            Id = 13,
-                            Availability = 25,
-                            Description = "Boutique hotel in Karimabad with mountain views.",
-                            Location = "Hunza",
-                            Name = "Serena Inn Hunza",
-                            Price = 12000m,
-                            Quality = "3-Star"
-                        },
-                        new
-                        {
-                            Id = 14,
-                            Availability = 20,
-                            Description = "Popular hotel near Duikar with panoramic Hunza valley views.",
-                            Location = "Hunza",
-                            Name = "Eagle’s Nest Hotel",
-                            Price = 15000m,
-                            Quality = "4-Star"
-                        },
-                        new
-                        {
-                            Id = 15,
-                            Availability = 12,
-                            Description = "Heritage hotel in a restored fort near Skardu.",
-                            Location = "Skardu",
-                            Name = "Serena Shigar Fort",
-                            Price = 22000m,
-                            Quality = "Luxury"
-                        },
-                        new
-                        {
-                            Id = 16,
-                            Availability = 10,
-                            Description = "5-star hill resort near Madyan with ski facilities.",
-                            Location = "Swat",
-                            Name = "Pearl Continental Swat (Madyan)",
-                            Price = 20000m,
-                            Quality = "5-Star"
-                        },
-                        new
-                        {
-                            Id = 17,
-                            Availability = 30,
-                            Description = "Mid-range hotel in Swat Valley with modern amenities.",
-                            Location = "Swat",
-                            Name = "Swat Continental Hotel",
-                            Price = 8000m,
-                            Quality = "3-Star"
-                        },
-                        new
-                        {
-                            Id = 18,
-                            Availability = 14,
-                            Description = "Luxury mountain resort at Malam Jabba ski area.",
-                            Location = "Swat",
-                            Name = "Serena Hotel Malam Jabba",
-                            Price = 15000m,
-                            Quality = "5-Star"
                         });
                 });
 
@@ -381,50 +274,6 @@ namespace karnel_travels_mvc.Migrations
                             Name = "Beach Luxury Resort",
                             Price = 17000m,
                             Quality = "Luxury"
-                        },
-                        new
-                        {
-                            Id = 7,
-                            Availability = 8,
-                            Capacity = 70,
-                            Description = "Luxury mountain resort with ski facilities in Swat.",
-                            Location = "Malam Jabba",
-                            Name = "Swat Serena Resort",
-                            Price = 25000m,
-                            Quality = "Luxury"
-                        },
-                        new
-                        {
-                            Id = 8,
-                            Availability = 10,
-                            Capacity = 60,
-                            Description = "High-end hill resort overlooking the Kunhar River.",
-                            Location = "Naran",
-                            Name = "Pearl Continental Resort Naran",
-                            Price = 22000m,
-                            Quality = "Luxury"
-                        },
-                        new
-                        {
-                            Id = 9,
-                            Availability = 20,
-                            Capacity = 50,
-                            Description = "Remote resort at the base of Nanga Parbat (Fairy Meadows).",
-                            Location = "Nanga Parbat Basecamp",
-                            Name = "Fairy Meadows Resort",
-                            Price = 8000m,
-                            Quality = "Standard"
-                        },
-                        new
-                        {
-                            Id = 10,
-                            Availability = 15,
-                            Capacity = 40,
-                            Description = "Eco-resort surrounded by forests near Gilgit.",
-                            Location = "Naltar",
-                            Name = "Jungle Resort Naltar",
-                            Price = 9000m,
-                            Quality = "Standard"
                         });
                 });
 
@@ -536,96 +385,6 @@ namespace karnel_travels_mvc.Migrations
                             Name = "Cafe De Hunza",
                             Price = 800m,
                             Quality = "Standard"
-                        },
-                        new
-                        {
-                            Id = 8,
-                            Availability = 50,
-                            Description = "Famous for spicy karahi dishes in Lahore.",
-                            Location = "Lahore",
-                            Name = "Butt Karahi",
-                            Price = 600m,
-                            Quality = "Standard"
-                        },
-                        new
-                        {
-                            Id = 9,
-                            Availability = 30,
-                            Description = "Popular restaurant with Lahore Fort views.",
-                            Location = "Lahore",
-                            Name = "Cooco's Den",
-                            Price = 1200m,
-                            Quality = "Premium"
-                        },
-                        new
-                        {
-                            Id = 10,
-                            Availability = 25,
-                            Description = "Outdoor Italian restaurant in F-6 area.",
-                            Location = "Islamabad",
-                            Name = "Tuscany Courtyard",
-                            Price = 2000m,
-                            Quality = "Premium"
-                        },
-                        new
-                        {
-                            Id = 11,
-                            Availability = 35,
-                            Description = "Coffee shop and bakery known for desserts.",
-                            Location = "Islamabad",
-                            Name = "Burning Brownie",
-                            Price = 800m,
-                            Quality = "Standard"
-                        },
-                        new
-                        {
-                            Id = 12,
-                            Availability = 40,
-                            Description = "Upscale Mediterranean restaurant in Clifton.",
-                            Location = "Karachi",
-                            Name = "Okra",
-                            Price = 2500m,
-                            Quality = "Premium"
-                        },
-                        new
-                        {
-                            Id = 13,
-                            Availability = 60,
-                            Description = "Well-known BBQ and grill restaurant in Clifton.",
-                            Location = "Karachi",
-                            Name = "BBQ Tonight",
-                            Price = 1700m,
-                            Quality = "Premium"
-                        },
-                        new
-                        {
-                            Id = 14,
-                            Availability = 30,
-                            Description = "Contemporary cafe and restaurant in Clifton.",
-                            Location = "Karachi",
-                            Name = "Xander's",
-                            Price = 1800m,
-                            Quality = "Premium"
-                        },
-                        new
-                        {
-                            Id = 15,
-                            Availability = 20,
-                            Description = "Popular cafe in Karimabad serving local Hunza dishes.",
-                            Location = "Hunza",
-                            Name = "Amber Cafe",
-                            Price = 800m,
-                            Quality = "Standard"
-                        },
-                        new
-                        {
-                            Id = 16,
-                            Availability = 15,
-                            Description = "Alpine-style restaurant at Malam Jabba resort.",
-                            Location = "Swat",
-                            Name = "Peach Hotel Restaurant",
-                            Price = 1000m,
-                            Quality = "Standard"
                         });
                 });
 
@@ -736,159 +495,6 @@ namespace karnel_travels_mvc.Migrations
                             Location = "Thatta",
                             Name = "Makli Necropolis",
                             Quality = "Good"
-                        },
-                        new
-                        {
-                            Id = 9,
-                            Description = "Historic Mughal fort adjacent to Badshahi Mosque.",
-                            IsAvailable = true,
-                            Location = "Lahore",
-                            Name = "Lahore Fort",
-                            Quality = "Excellent"
-                        },
-                        new
-                        {
-                            Id = 10,
-                            Description = "National monument where Pakistan Resolution was passed.",
-                            IsAvailable = true,
-                            Location = "Lahore",
-                            Name = "Minar-e-Pakistan",
-                            Quality = "Excellent"
-                        },
-                        new
-                        {
-                            Id = 11,
-                            Description = "17th century Mughal mosque famous for its frescoes.",
-                            IsAvailable = true,
-                            Location = "Lahore",
-                            Name = "Wazir Khan Mosque",
-                            Quality = "Excellent"
-                        },
-                        new
-                        {
-                            Id = 12,
-                            Description = "Popular city beach on the Arabian Sea, known for camel rides and food stalls.",
-                            IsAvailable = true,
-                            Location = "Karachi",
-                            Name = "Clifton Beach",
-                            Quality = "Good"
-                        },
-                        new
-                        {
-                            Id = 13,
-                            Description = "Mausoleum of Quaid-e-Azam Muhammad Ali Jinnah, an iconic Karachi landmark.",
-                            IsAvailable = true,
-                            Location = "Karachi",
-                            Name = "Mazar-e-Quaid",
-                            Quality = "Excellent"
-                        },
-                        new
-                        {
-                            Id = 14,
-                            Description = "National monument symbolizing Pakistan’s unity (foothills of Margalla).",
-                            IsAvailable = true,
-                            Location = "Islamabad",
-                            Name = "Pakistan Monument",
-                            Quality = "Excellent"
-                        },
-                        new
-                        {
-                            Id = 15,
-                            Description = "Hilltop park with panoramic views of Islamabad city.",
-                            IsAvailable = true,
-                            Location = "Islamabad",
-                            Name = "Daman-e-Koh",
-                            Quality = "Good"
-                        },
-                        new
-                        {
-                            Id = 16,
-                            Description = "Cultural museum showcasing Pakistan’s diverse traditions.",
-                            IsAvailable = true,
-                            Location = "Islamabad",
-                            Name = "Lok Virsa Heritage Museum",
-                            Quality = "Good"
-                        },
-                        new
-                        {
-                            Id = 17,
-                            Description = "8th-century fort overlooking Karimabad in Hunza Valley.",
-                            IsAvailable = true,
-                            Location = "Gilgit-Baltistan",
-                            Name = "Baltit Fort",
-                            Quality = "Excellent"
-                        },
-                        new
-                        {
-                            Id = 18,
-                            Description = "Distinctive jagged peaks along the Karakoram Highway in Hunza.",
-                            IsAvailable = true,
-                            Location = "Gilgit-Baltistan",
-                            Name = "Passu Cones",
-                            Quality = "Good"
-                        },
-                        new
-                        {
-                            Id = 19,
-                            Description = "Scenic turquoise lake in Hunza (formed by 2010 landslide).",
-                            IsAvailable = true,
-                            Location = "Gilgit-Baltistan",
-                            Name = "Attabad Lake",
-                            Quality = "Good"
-                        },
-                        new
-                        {
-                            Id = 20,
-                            Description = "High-altitude plateau (Land of Giants) near Skardu, famed for wildflowers.",
-                            IsAvailable = true,
-                            Location = "Gilgit-Baltistan",
-                            Name = "Deosai National Park",
-                            Quality = "Excellent"
-                        },
-                        new
-                        {
-                            Id = 21,
-                            Description = "Mountain lake near Skardu supplying fresh water to the valley.",
-                            IsAvailable = true,
-                            Location = "Gilgit-Baltistan",
-                            Name = "Satpara Lake",
-                            Quality = "Good"
-                        },
-                        new
-                        {
-                            Id = 22,
-                            Description = "Mountain resort and ski area in Swat Valley.",
-                            IsAvailable = true,
-                            Location = "Swat",
-                            Name = "Malam Jabba",
-                            Quality = "Good"
-                        },
-                        new
-                        {
-                            Id = 23,
-                            Description = "Alpine lake in the Ushu Valley of Swat (fishing & boating).",
-                            IsAvailable = true,
-                            Location = "Swat",
-                            Name = "Mahodand Lake",
-                            Quality = "Good"
-                        },
-                        new
-                        {
-                            Id = 24,
-                            Description = "Cedar forest in Swat, gateway to Mahodand Lake.",
-                            IsAvailable = true,
-                            Location = "Swat",
-                            Name = "Ushu Forest",
-                            Quality = "Good"
-                        },
-                        new
-                        {
-                            Id = 25,
-                            Description = "Archaeological museum in Saidu Sharif, showcasing Gandharan artifacts.",
-                            IsAvailable = true,
-                            Location = "Swat",
-                            Name = "Swat Museum",
-                            Quality = "Standard"
                         });
                 });
 
@@ -997,33 +603,6 @@ namespace karnel_travels_mvc.Migrations
                             Price = 8000m,
                             Route = "Skardu to Deosai Plains",
                             TransportType = "Jeep"
-                        },
-                        new
-                        {
-                            Id = 9,
-                            Availability = true,
-                            Description = "Daily flights (PIA/SereneAir). Duration ~1h45.",
-                            Price = 10000m,
-                            Route = "Karachi to Lahore",
-                            TransportType = "Flight"
-                        },
-                        new
-                        {
-                            Id = 10,
-                            Availability = true,
-                            Description = "Express train (Awam/Jaffar Express). Duration ~6h.",
-                            Price = 1800m,
-                            Route = "Lahore to Peshawar",
-                            TransportType = "Train"
-                        },
-                        new
-                        {
-                            Id = 11,
-                            Availability = true,
-                            Description = "Daewoo Express bus service. Duration ~2h30m.",
-                            Price = 1500m,
-                            Route = "Islamabad to Peshawar",
-                            TransportType = "Bus"
                         });
                 });
 #pragma warning restore 612, 618
